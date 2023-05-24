@@ -9,11 +9,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Flutter
-        uses: flutter/actions/setup-flutter@v2
-        with:
-          flutter-version: 'stable'
-
+      - name: Install Flutter
+        run: |
+          git clone https://github.com/flutter/flutter.git -b stable
+          export PATH="$PATH:`pwd`/flutter/bin"
+      
       - name: Check out code
         uses: actions/checkout@v2
 
