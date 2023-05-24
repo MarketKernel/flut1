@@ -9,19 +9,19 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Flutter
-        run: |
-          git clone https://github.com/flutter/flutter.git -b stable
-          export PATH="$PATH:`pwd`/bin"
-      
-      - name: Check out code
-        uses: actions/checkout@v2
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
 
-      - name: Get packages
-        run: flutter pub get
+    - name: Check out code
+      uses: actions/checkout@v2
 
-      - name: Build package
-        run: flutter pub publish --dry-run
+    - name: Get packages
+      run: flutter pub get
 
-      - name: Publish package
-        run: flutter pub publish
+    - name: Build package
+      run: flutter pub publish --dry-run
+
+    - name: Publish package
+      run: flutter pub publish
