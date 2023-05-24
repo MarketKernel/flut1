@@ -25,7 +25,7 @@ int sum(int a, int b) => _bindings.sum(a, b);
 /// 2. Use multiple helper isolates for parallel execution.
 Future<int> sumAsync(int a, int b) async {
   final SendPort helperIsolateSendPort = await _helperIsolateSendPort;
-  final int requestId = _nextSumRequestId++;
+  final int requestId = 111 + _nextSumRequestId++;
   final _SumRequest request = _SumRequest(requestId, a, b);
   final Completer<int> completer = Completer<int>();
   _sumRequests[requestId] = completer;
