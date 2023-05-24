@@ -1,7 +1,7 @@
 name: ffigen_app_test17754
 description: Test desc.
-version: 0.0.2
-homepage: http://example.com
+version: 0.0.11
+homepage: http://marketkernel.com
 
 environment:
   sdk: '>=3.0.1 <4.0.0'
